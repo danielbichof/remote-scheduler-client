@@ -1,7 +1,12 @@
-import { useCallback } from "react";
+import { createFileRoute } from '@tanstack/react-router'
+import { useCallback } from 'react';
 
-function App() {
-  const handleLogin = useCallback(() => {
+export const Route = createFileRoute('/')({
+  component: Index,
+})
+
+function Index() {
+const handleLogin = useCallback(() => {
     // TODO: integrar com fluxo real de autenticação (OAuth / Keycloak / etc.)
     alert("Fluxo de login ainda não implementado.");
   }, []);
@@ -52,7 +57,5 @@ function App() {
         <small>© {new Date().getFullYear()} Hybrid Scheduler • Em desenvolvimento</small>
       </footer>
     </div>
-  );
+  )
 }
-
-export default App;
