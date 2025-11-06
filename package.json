@@ -10,11 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/common": "^5.11.5",
+    "@fullcalendar/core": "^6.1.19",
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/react": "^6.1.19",
     "@tailwindcss/vite": "^4.1.12",
     "@tanstack/react-router": "^1.131.36",
     "@tanstack/react-router-devtools": "^1.131.36",
+    "css-loader": "^7.1.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {

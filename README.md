@@ -1,4 +1,24 @@
-# React + TypeScript + Vite
+# Remote Scheduler Client (React + TypeScript + Vite)
+
+## Configuração da API (integração com o backend)
+
+Defina a URL base da API via variável de ambiente Vite:
+
+1. Crie um arquivo `.env` na raiz deste projeto com:
+
+```
+VITE_API_URL=http://localhost:5247
+```
+
+2. Inicie o backend em desenvolvimento (ASP.NET Core) usando o perfil `http`/porta `5247` conforme `launchSettings.json`.
+
+3. Rode o frontend (Vite) em `http://localhost:5173`:
+
+```
+npm run dev
+```
+
+Com isso, o registro de usuário e o carregamento da agenda mensal no calendário irão se comunicar com a API.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
