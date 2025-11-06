@@ -1,20 +1,20 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
+import { createRootRoute, Outlet, useLocation } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import Header from '../components/Header/Header'
 
-const RootLayout = () => (
-  <>
-    <div className="p-2 flex gap-2">
-      <Link to="/" className="[&.active]:font-bold">
-        Home
-      </Link>{' '}
-      <Link to="/about" className="[&.active]:font-bold">
-        About
-      </Link>
-    </div>
-    <hr />
-    <Outlet />
-    <TanStackRouterDevtools />
-  </>
-)
+const RootLayout = () => {
+  const location = useLocation()
+  const showHeader = !['/login', '/register', '/forgot-password'].includes(location.pathname)
+
+  return (
+    <>
+      {showHeader && <Header />}
+      <main className="flex-1">
+        <Outlet />
+      </main>
+      <TanStackRouterDevtools />
+    </>
+  )
+}
 
 export const Route = createRootRoute({ component: RootLayout })
